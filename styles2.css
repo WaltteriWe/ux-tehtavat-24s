@@ -1,0 +1,279 @@
+:root {
+    --tausta: rgb(0, 0, 0);
+  }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: center;
+  font-family: Helvetica, sans-serif;
+}
+
+body {
+  background-image: url("IMG/background-burger.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  color: white;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+#middle {
+  background-color: rgba(255, 255, 255, 0);
+  width: 100%;
+  height: 25%;
+  text-align: center;
+  box-sizing: border-box;
+  border-radius: 10%;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.info-box {
+  position: absolute;
+  float: left;
+  height: 250px;
+  width: 50%;
+  border: 1px solid var(--tausta);
+  background-color: rgba(0, 0, 0, 0.524);
+  box-shadow: 5px 5px 5px rgba(255, 255, 255, 0.784);
+  margin-top: 30%;
+}
+
+#info {
+  float: left;
+  position: relative;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(255, 0, 195);
+  /*width: 50%;
+    height: 41%;*/
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+h1 {
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  color: rgb(255, 0, 153);
+  text-decoration: underline;
+}
+
+h3 {
+  text-align: center;
+  color: white;
+  display: inline;
+}
+
+#nav-bar {
+  position: sticky;
+  color: rgb(43, 226, 183);
+  display: inline;
+  text-align: center;
+  width: 100%;
+  padding-bottom: 10px;
+}
+
+.top-box {
+  position: sticky;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
+  background-color: var(--tausta);
+  position: relative;
+  color: rgb(0, 174, 255);
+  border: 3px solid black;
+  border-radius: 35;
+  box-shadow: 5px 5px 5px rgba(255, 255, 255, 0.435);
+  text-align: center;
+}
+
+.top-box > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer {
+  background-color: var(--tausta);
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  height: 50px;
+}
+
+ul {
+  margin: auto;
+  /* float: right; */
+}
+
+li {
+  display: inline;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#Info-title {
+  text-align: center;
+  color: white;
+  margin-bottom: 50px;
+  
+}
+
+#Into-text {
+  top: auto;
+  text-align: center;
+  color: white;
+  margin-top: 10px;
+}
+
+#middle-text {
+  text-align: center;
+  color: white;
+  margin-top: 10px;
+}
+
+.burger {
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 10px auto;
+  border: 2px solid;
+  float: right;
+  clear: left;
+  border: 2px solid;
+  border-color: rgba(255, 0, 0, 0);
+  border-radius: 70px;
+  box-shadow: 2px 2px 4px var(--tausta );
+  right: 0;
+  top: -30px;
+}
+
+.burger::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+#home {
+  font-size: 28px;
+  padding-right: 10px;
+}
+
+#menu {
+  font-size: 28px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+#contact {
+  font-size: 28px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+#login {
+  margin-right: 28px;
+  margin-bottom: 10px;
+  align-self: flex-end;
+}
+
+#login img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  overflow: hidden;
+}
+
+/*   Open state of the dialog  */
+dialog[open] {
+  opacity: 1;
+}
+
+/*   Closed state of the dialog   */
+dialog {
+  border-radius: 35px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out,
+    overlay 0.7s ease-out allow-discrete, display 0.7s ease-out allow-discrete;
+  /* Equivalent to
+    transition: all 0.7s allow-discrete; */
+  background-color: #00000000;
+}
+
+/*   Before-open state  */
+/* Needs to be after the previous dialog[open] rule to take effect,
+      as the specificity is the same */
+
+/* Transition the :backdrop when the dialog modal is promoted to the top layer */
+::backdrop {
+  background-color: var(--tausta);
+  opacity: 0.75;
+}
+
+dialog[open]::backdrop {
+  background-color: var(--tausta);
+    backdrop-filter: blur(7px);
+}
+
+/* This starting-style rule cannot be nested inside the above selector
+  because the nesting selector cannot represent pseudo-elements. */
+
+#form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.514);
+}
+
+#form input {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid black;
+  transition: border-color 0.7s ease-out, transform 0.7s ease-out,
+    overlay 0.7s ease-out allow-discrete, display 0.7s ease-out allow-discrete;
+}
+
+#form input:user-invalid {
+  border-color: red;
+}
+
+#form input:valid {
+  border-color: green;
+}
+
+#form button {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid var(--tausta);
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 0, 170);
+}
+
+
+
+#close {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid var(--tausta);
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 0, 212);
+}

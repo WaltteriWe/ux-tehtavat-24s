@@ -11,7 +11,7 @@
 }
 
 body {
-  background-image: url("IMG/background-burger.jpg");
+  background-color: sandybrown;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -22,6 +22,20 @@ body {
   position: relative;
 }
 
+#hero-image {
+  height: 50vh;
+  min-height: 500px;
+  max-height: 700px;
+  width: 100%;
+  background:  url(IMG/background-burger.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
+
 #middle {
   background-color: rgba(255, 255, 255, 0);
   width: 100%;
@@ -29,7 +43,7 @@ body {
   text-align: center;
   box-sizing: border-box;
   border-radius: 10%;
-  padding: 10px;
+  padding-bottom: 10px;
   margin-bottom: 20px;
 }
 
@@ -39,9 +53,9 @@ body {
   height: 250px;
   width: 50%;
   border: 1px solid var(--tausta);
-  background-color: rgba(0, 0, 0, 0.524);
+  background-color: var(--tausta);
   box-shadow: 5px 5px 5px rgba(255, 255, 255, 0.784);
-  margin-top: 30%;
+  margin-top: 15%;
 }
 
 #info {
@@ -189,6 +203,7 @@ li {
   margin-right: 28px;
   margin-bottom: 10px;
   align-self: flex-end;
+  transition: transform 0.7s ease-out;
 }
 
 #login img {
@@ -196,14 +211,21 @@ li {
   height: 70px;
   object-fit: contain;
   overflow: hidden;
+  transition: transform 0.7s ease-out;
+}
+#login:hover,
+#login img:hover {
+  transform: scale(1.1);
 }
 
-/*   Open state of the dialog  */
+
+
+
 dialog[open] {
   opacity: 1;
 }
 
-/*   Closed state of the dialog   */
+
 dialog {
   border-radius: 35px;
   position: absolute;
@@ -213,16 +235,10 @@ dialog {
   opacity: 0;
   transition: opacity 0.7s ease-out, transform 0.7s ease-out,
     overlay 0.7s ease-out allow-discrete, display 0.7s ease-out allow-discrete;
-  /* Equivalent to
-    transition: all 0.7s allow-discrete; */
   background-color: #00000000;
 }
 
-/*   Before-open state  */
-/* Needs to be after the previous dialog[open] rule to take effect,
-      as the specificity is the same */
 
-/* Transition the :backdrop when the dialog modal is promoted to the top layer */
 ::backdrop {
   background-color: var(--tausta);
   opacity: 0.75;
@@ -232,9 +248,6 @@ dialog[open]::backdrop {
   background-color: var(--tausta);
     backdrop-filter: blur(7px);
 }
-
-/* This starting-style rule cannot be nested inside the above selector
-  because the nesting selector cannot represent pseudo-elements. */
 
 #form {
   display: flex;

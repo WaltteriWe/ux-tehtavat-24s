@@ -1,3 +1,17 @@
+@font-face {
+  font-family: 'Exo 2';
+  src: url('fonts/Exo2-VariableFont_wght.ttf') format('truetype'); /* Adjust the path as needed */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Exo 2';
+  src: url('fonts/Exo2-Italic-VariableFont_wght.ttf') format('truetype'); /* Adjust the path as needed */
+  font-weight: normal;
+  font-style: italic;
+}
+
 :root {
   --tausta: rgb(0, 0, 0);
 }
@@ -7,7 +21,7 @@
   padding: 0;
   box-sizing: border-box;
   text-align: center;
-  font-family: Helvetica, sans-serif;
+  font-family: "Exo 2", sans-serif;
 }
 
 *::after {

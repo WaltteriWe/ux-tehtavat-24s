@@ -1,0 +1,98 @@
+/* Variables */
+$primary-color: #f048ee;
+$hover-color: #f2c1f1;
+$active-color: #111;
+$font-stack: 100% Helvetica, sans-serif;
+$padding-horizontal: 16px;
+
+@mixin center-horizontal {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+@mixin responsive-width($width) {
+  width: $width;
+
+  @media screen and (max-width: 600px) {
+    width: 100%;
+  }
+}
+
+body {
+  margin: 0;
+  font: $font-stack;
+}
+
+ol {
+  width: 200px;
+
+  li {
+    span {
+      color: $primary-color;
+      padding-left: $padding-horizontal;
+    }
+  }
+}
+
+ul.topnav {
+  list-style-type: none;
+  margin: 0 0 20px;
+  padding: 0;
+  overflow: hidden;
+  background-color: $primary-color;
+
+  li {
+    float: left;
+
+    &.right {
+      float: right;
+    }
+
+    a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px $padding-horizontal;
+      text-decoration: none;
+
+      &:hover:not(.active) {
+        background-color: $hover-color;
+      }
+
+      &.active {
+        background-color: $active-color;
+      }
+    }
+  }
+}
+
+.content {
+  padding: 0 $padding-horizontal;
+  width: 80%;
+  text-align: initial;
+}
+
+.box {
+  @include responsive-width(50%);
+  border: 2px solid $primary-color;
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.center {
+  @include center-horizontal;
+}
+
+img {
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  ul.topnav li.right,
+  ul.topnav li {
+    float: none;
+  }
+}

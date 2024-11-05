@@ -1,0 +1,79 @@
+/* Variables */
+body {
+  margin: 0;
+  font: 100% Helvetica, sans-serif;
+}
+
+ol {
+  width: 200px;
+}
+ol li span {
+  color: #f048ee;
+  padding-left: 16px;
+}
+
+ul.topnav {
+  list-style-type: none;
+  margin: 0 0 20px;
+  padding: 0;
+  overflow: hidden;
+  background-color: #f048ee;
+}
+ul.topnav li {
+  float: left;
+}
+ul.topnav li.right {
+  float: right;
+}
+ul.topnav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+ul.topnav li a:hover:not(.active) {
+  background-color: #f2c1f1;
+}
+ul.topnav li a.active {
+  background-color: #111;
+}
+
+.content {
+  padding: 0 16px;
+  width: 80%;
+  text-align: initial;
+}
+
+.box {
+  width: 50%;
+  border: 2px solid #f048ee;
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 20px;
+}
+@media screen and (max-width: 600px) {
+  .box {
+    width: 100%;
+  }
+}
+
+.center {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+img {
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  ul.topnav li.right,
+  ul.topnav li {
+    float: none;
+  }
+}
+
+/*# sourceMappingURL=style-plain.css.map */

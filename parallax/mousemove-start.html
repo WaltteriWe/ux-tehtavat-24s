@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="mouseMove.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>Parallax demos</header>
+    <div id="backgroundImage">
+      <div class="layer layer1" data-type="parallax" data-speed="10"></div>
+      <div class="layer layer2" data-type="parallax" data-speed="30"></div>
+      <div id="mouse"></div>
+      <div id="mouse-center"></div>
+    </div>
+    <div id="coordinates">
+      X: <span id="mouseX">0</span>, Y: <span id="mouseY">0</span>
+    </div>
+    <script>
+      document.addEventListener("mousemove", function (event) {
+        const layers = document.querySelectorAll("[data-type='parallax']");
+        const mouseX = event.clientX;
+        const mouseY = event.clientY;
+        const windowWidth = window.innerWidth;
+        const windowHeight = window.innerHeight;
+
+        layers.forEach(function (layer) {
+          const speed = layer.getAttribute("data-speed");
+          const xPos = ((mouseX / windowWidth) * 2 - 1) * speed;
+          const yPos = ((mouseY / windowHeight) * 2 - 1) * speed;
+          layer.style.transform = `translate3d(${xPos}px, ${yPos}px, 0)`;
+        });
+
+        document.getElementById("mouseX").textContent = mouseX;
+        document.getElementById("mouseY").textContent = mouseY;
+      });
+    </script>
+   </body>
+</html>

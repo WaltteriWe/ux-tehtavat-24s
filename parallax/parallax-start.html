@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="parallax.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>Parallax demos</header>
+    <div id="hero">
+      <div class="layer layer1" data-type="parallax" data-speed="20"></div>
+      <div class="layer layer2" data-type="parallax" data-speed="50"></div>
+      <!-- <div class="layer layer3" data-type="parallax" data-speed="5"></div> -->
+    </div>
+    <main>
+      <h1>
+        Max Verstappen is a Dutch racing driver currently competing in Formula
+        One with Red Bull Racing. He is the son of former Formula One driver Jos
+        Verstappen. Max became the youngest driver to compete in Formula One at
+        the age of 17 years and 166 days during the 2015 Australian Grand Prix.
+        He has since become one of the most successful drivers in the sport,
+        winning multiple races and championships.
+      </h1>
+    </main>
+    <div id="taustascroll"></div>
+    <section>
+      <div>
+        <p>
+          Scuderia Ferrari is the racing team division of the Ferrari automobile
+          marque. Founded by Enzo Ferrari, the team has competed in Formula One
+          since the inaugural season in 1950. Ferrari is the oldest and most
+          successful team in the history of the sport, having won numerous
+          Constructors' and Drivers' Championships. The team is known for its
+          passionate fan base, often referred to as the "Tifosi," and its iconic
+          red cars. Over the years, Ferrari has been home to many legendary
+          drivers, including Michael Schumacher, who won five consecutive World
+          Championships with the team.
+        </p>
+      </div>
+    </section>
+    <script>
+      window.addEventListener("scroll", function (event) {
+        const top = this.scrollY;
+        console.log(top);
+
+        var layers = document.querySelectorAll("[data-type='parallax']");
+        console.log(layers);
+
+        var layer, speed, ypos;
+        for (var i = 0; i < layers.length; i++) {
+          layer = layers[i];
+          speed = layer.getAttribute("data-speed");
+          ypos = -((top * speed) / 100);
+          layer.setAttribute(
+            "style",
+            "transform: translate3d(0px, " + ypos + "px, 0px)"
+          );
+        }
+      });
+    </script>
+  </body>
+</html>

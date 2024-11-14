@@ -1,0 +1,89 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: black;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  height: 100px;
+  background-color: #00000000;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: xx-large;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+#hero-text {
+  color: #00b8d0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+main {
+  background-color: #f99503;
+  padding: 2em;
+  text-align: center;
+  position: relative;
+  z-index: 100;
+}
+
+#taustascroll {
+  height: 300px;
+  overflow: hidden;
+  background: #ff0000;
+  color: black;
+  background-image: url("IMG/Ferrari.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: 100%;
+}
+
+section {
+  position: relative;
+  padding: 40px;
+  margin-top: -5px;
+  background: #ff6600;
+  text-align: center;
+  height: 250px;
+}
+
+#hero {
+  color: #00b8d0;
+  height: 800px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.layer {
+  position: fixed;
+  height: inherit;
+  width: inherit;
+  background-position: center;
+}
+
+.layer1 {
+  background-image: url("IMG/verstappen.png");
+  background-size: cover;
+}
+
+.layer2 {
+  background-image: url("IMG/rain.png");
+  background-size: cover;
+}

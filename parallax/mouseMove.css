@@ -24,6 +24,11 @@
     z-index: 1000;
   }
 
+  header:hover {
+    background-color: #ff00ff;
+    transform: scale(1.8);
+  }
+
   #backgroundImage {
     margin-top: 100px;
     width: 100%;
